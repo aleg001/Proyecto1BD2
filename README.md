@@ -1,3 +1,6 @@
-# Default starter template
+# Proyecto BD - 2
 
-[MEVN-CLI](https://github.com/madlabsinc/mevn-cli)
+### Autores:
+-Alejandro Gómez (Ale)
+-Yong Bum Park (Yongui)
+-Oscar López (Racso)
