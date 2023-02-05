@@ -4,7 +4,7 @@
       <v-img
         contain
         height="200"
-        src="@/assets/logoMO.png"
+        src="@/assets/logoMO.svg"
         class="logo"
       />
 
@@ -66,6 +66,7 @@
 <style>
 
 
+
 .logo {
   animation: rotation 30s infinite linear;
 }
@@ -82,6 +83,8 @@
     transform: rotate(360deg);
   }
 }
+
+
 
 </style>
 

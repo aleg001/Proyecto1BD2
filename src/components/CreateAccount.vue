@@ -1,5 +1,5 @@
-<template>
-    <v-container class="fill-height">
+<template >
+    <v-container class="fill-height "  >
       <v-responsive class="d-flex align-center text-center fill-height">
      
   
@@ -38,6 +38,7 @@
                 v-model="password"
                 :rules="rulesPass"
                 label="Contraseña"
+                :type="show1 ? 'text' : 'password'"
                
               ></v-text-field>
           
@@ -57,7 +58,7 @@
         rules: [
           value => {
             if (value) return true
-            return 'Debes ingresar tu correo'},
+            return 'Debes ingresar tu información'},
           
         ],
         rulesPass: [
@@ -71,6 +72,5 @@
     }
   </script>
 
-  
   
   
