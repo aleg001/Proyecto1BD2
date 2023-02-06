@@ -7,12 +7,15 @@ Proyecto realizado usando:
 - Express
 - NodeJS
 
-Requerimientos cumplidos
+Requerimientos cumplidos:
 
 
 [X] 15 pts - Mongo Charts
+
 [] 10 pts - BI Connectors
+
 [X] 5 pts - Frontend
+
 ## Project setup
 
 ```

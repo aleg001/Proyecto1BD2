@@ -1,11 +1,6 @@
 <template>
-
   <AppBar />
-
-
-  <h1 class="text-center mt-15"> Gráficos</h1>
-
-
+  <h1 class="text-center mt-15"> Visualización de gráficos</h1>
 
   <v-container fluid>
     <v-col cols="15">
