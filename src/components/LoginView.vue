@@ -33,7 +33,7 @@
               :type="show1 ? 'text' : 'password'"
             ></v-text-field>
         
-            <v-btn type="submit" block class="mt-2 " style="background-color: #709775; color: white">Ingresar</v-btn>
+            <v-btn @submit.prevent type="submit" to="/MainPage" block class="mt-2 " style="background-color: #709775; color: white">Ingresar</v-btn>
             <v-btn to="/createAccount" block class="mt-2" style="background-color: #644536; color: white;">Crear cuenta</v-btn>
           </v-form>
         </v-col></v-row>
@@ -42,6 +42,8 @@
 </template>
 
 <script>
+
+
  export default {
     data: () => ({
       email: '',
