@@ -1,16 +1,27 @@
-# base
+# Music-On
 
+Proyecto realizado usando:
+- VueJS 3
+- Vuetify
+- MongoDB Atlas
+- Express
+- NodeJS
+
+Requerimientos cumplidos
+
+
+[X] 15 pts - Mongo Charts
+[] 10 pts - BI Connectors
+[X] 5 pts - Frontend
 ## Project setup
 
 ```
-# yarn
-yarn
 
-# npm
+
 npm install
+cd Proyecto1BD2
+cd Frontend / cd Backend
 
-# pnpm
-pnpm install
 ```
 
 ### Compiles and hot-reloads for development
@@ -52,6 +63,4 @@ npm run lint
 pnpm lint
 ```
 
-### Customize configuration
 
-See [Configuration Reference](https://vitejs.dev/config/).

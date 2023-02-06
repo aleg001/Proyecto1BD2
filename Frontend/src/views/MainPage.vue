@@ -5,6 +5,8 @@
 
   <h1 class="text-center mt-15"> Gráficos</h1>
 
+
+
   <v-container fluid>
     <v-col cols="15">
       <v-row justify="center" align="center" class="mb-10">
