@@ -3,5 +3,5 @@
 </template>
 
 <script setup>
-  import LoginView from '@/components/LoginView.vue'
+import LoginView from '@/components/LoginView.vue'
 </script>
