@@ -4,6 +4,7 @@ import web from "./routes/web.js";
 import cors from 'cors'
 
 const app = express()
+app.use(cors())
 
 const port = process.env.PORT || '8000'
 const DATABASE_URL = process.env.DATABASE_URL || "mongodb+srv://uvgBD2:holaMundo001@uvg.vq4pveg.mongodb.net/test";
