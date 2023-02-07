@@ -3,7 +3,7 @@
     <v-responsive class="d-flex align-center text-center fill-height">
       <v-img contain height="200" src="@/assets/logoMO.svg" class="logo" />
 
-      <!-- <div v-if="error">Oops! Error encountered: {{ error.message }}</div>
+      <div v-if="error">Oops! Error encountered: {{ error.message }}</div>
         <div v-else-if="usuariosData">
           <div v-for="({ id, Username, Nombre,Apellido,Email,password,Playlists }, i) in usuariosData" :key="id">
             <h2>
@@ -16,10 +16,7 @@
               {{ Playlists }}
             </h2>
           </div>
-        </div> -->
-
-      <h1>usuariosData</h1>
-
+        </div>
 
       <h1 class="text-h2 font-weight-bold mt-5">Music-On</h1>
 
