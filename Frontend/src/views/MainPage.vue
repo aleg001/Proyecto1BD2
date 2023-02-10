@@ -1,10 +1,10 @@
 <template>
   <AppBar />
-  <h1 class="text-center mt-15"> Homepage</h1>
+  <h1 class="text-center mt-15 text-h2 font-weight-bold"> Homepage</h1>
   <v-container class="mt-10">
     <v-row>
       <v-col cols="12" sm="4" class="d-flex">
-        <v-card class="mx-auto" to="/browse" @mouseover="browseHover = true" @mouseleave="browseHover = false"
+        <v-card class="mx-auto" to="/Profile" @mouseover="browseHover = true" @mouseleave="browseHover = false"
           color="primary" rounded="xl">
           <v-card-title class="font-weight-bold">Mi perfil <v-icon>mdi-account</v-icon></v-card-title>
           <v-card-text>Edita la información de tu perfil</v-card-text>
@@ -32,10 +32,10 @@
 
 
       <v-col cols="12" sm="4" class="d-flex">
-        <v-card class="mx-auto" to="/MongoCharts" @mouseover="libraryHover = true" @mouseleave="libraryHover = false"
+        <v-card class="mx-auto" to="/SearchSongs" @mouseover="libraryHover = true" @mouseleave="libraryHover = false"
           color="secondary" rounded="xl">
-          <v-card-title class="font-weight-bold">Estadísticas</v-card-title>
-          <v-card-text>Accede a las estadísticas de la plataforma. Powered by Mongo Charts!</v-card-text>
+          <v-card-title class="font-weight-bold">Busca canciones <v-icon>mdi-music</v-icon></v-card-title>
+          <v-card-text>Busca canciones en la plataforma</v-card-text>
 
         </v-card>
       </v-col>
@@ -44,7 +44,7 @@
       <v-col cols="12" sm="4" class="d-flex">
         <v-card class="mx-auto" @mouseover="libraryHover = true" @mouseleave="libraryHover = false"
           @click="showModal = true" color="black" rounded="xl">
-          <v-card-title class="font-weight-bold">Eliminar usuarios</v-card-title>
+          <v-card-title class="font-weight-bold">Eliminar usuario <v-icon>mdi-delete-alert</v-icon></v-card-title>
           <v-card-text>Función para usuarios administrador</v-card-text>
 
         </v-card>
