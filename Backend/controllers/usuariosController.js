@@ -24,6 +24,20 @@ class UsuarioController {
           res.status(400).send({ message: 'Error al crear el usuario', error })
         }
       }
+
+      static update = async (req, res) => {
+        try {
+          const { username, nombre, apellido,email, password } = req.body
+          const updatedUsuario = await UsuarioModel.findOneAndUpdate({ email }, { username, nombre, apellido, password }, { new: true })
+          if (!updatedUsuario) {
+            res.status(404).send({ message: 'No se encontró el usuario con el correo especificado' })
+          } else {
+            res.send({ message: 'Usuario actualizado con éxito', updatedUsuario })
+          }
+        } catch (error) {
+          res.status(400).send({ message: 'Error al actualizar el usuario', error })
+        }
+      }
 }
 
 export default UsuarioController

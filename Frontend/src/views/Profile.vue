@@ -17,7 +17,7 @@
 
             <v-col cols="5">
 
-                <v-form @submit.prevent="createUsuario">
+                <v-form @submit.prevent="updateUsuario">
                     <v-text-field v-model="email" label="Correo"></v-text-field>
 
                     <v-text-field v-model="name" label="Nombre"></v-text-field>
@@ -39,6 +39,7 @@
 <script>
 
 import AppBar from '@/components/AppBar.vue';
+import axios from 'axios'
 
 
 export default {
@@ -62,9 +63,27 @@ export default {
 
         ],
     }),
+    methods: {
+        async updateUsuario() {
+        try {
+            const usuario = {
+            username: this.name + ' ' + this.lastName,
+            nombre: this.name,
+            apellido: this.lastName,
+            email: this.email,
+            password: this.password,
+            }
+            const res = await axios.put('http://localhost:8000/api/usuarios', usuario)
+            console.log(res.data)
+        } catch (err) {
+            console.error(err)
+        }
+        }
+    },
     components: {
         AppBar
     }
+    
 }
 
 </script>
