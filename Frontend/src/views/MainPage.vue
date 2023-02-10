@@ -4,8 +4,8 @@
   <v-container class="mt-10">
     <v-row>
       <v-col cols="12" sm="4" class="d-flex">
-        <v-card class="mx-auto" to="/Profile" @mouseover="browseHover = true" @mouseleave="browseHover = false"
-          color="primary" rounded="xl">
+        <v-card class="mx-auto button" to="/Profile" @mouseover="browseHover = true" @mouseleave="browseHover = false"
+          color="#709775" style="color: white;" rounded="xl">
           <v-card-title class="font-weight-bold">Mi perfil <v-icon>mdi-account</v-icon></v-card-title>
           <v-card-text>Edita la información de tu perfil</v-card-text>
 
@@ -13,8 +13,8 @@
       </v-col>
 
       <v-col cols="12" sm="4" class="d-flex">
-        <v-card class="mx-auto" to="/AddPlaylists" @mouseover="searchHover = true" @mouseleave="searchHover = false"
-          color="secondary" rounded="xl">
+        <v-card class="mx-auto button" to="/AddPlaylists" @mouseover="searchHover = true"
+          @mouseleave="searchHover = false" color="#709775" style="color: white;" rounded="xl">
           <v-card-title class="font-weight-bold">Crear Playlist <v-icon>mdi-playlist-plus</v-icon></v-card-title>
           <v-card-text>Crea una playlist con tus canciones favoritas</v-card-text>
 
@@ -22,8 +22,8 @@
       </v-col>
 
       <v-col cols="12" sm="4" class="d-flex">
-        <v-card class="mx-auto" to="/MongoCharts" @mouseover="libraryHover = true" @mouseleave="libraryHover = false"
-          color="primary" rounded="xl">
+        <v-card class="mx-auto button" to="/MongoCharts" @mouseover="libraryHover = true"
+          @mouseleave="libraryHover = false" color="#709775" style="color: white;" rounded="xl">
           <v-card-title class="font-weight-bold">Estadísticas <v-icon>mdi-chart-areaspline</v-icon></v-card-title>
           <v-card-text>Accede a las estadísticas de la plataforma. Powered by Mongo Charts!</v-card-text>
 
@@ -32,8 +32,8 @@
 
 
       <v-col cols="12" sm="4" class="d-flex">
-        <v-card class="mx-auto" to="/SearchSongs" @mouseover="libraryHover = true" @mouseleave="libraryHover = false"
-          color="secondary" rounded="xl">
+        <v-card class="mx-auto button" to="/SearchSongs" @mouseover="libraryHover = true"
+          @mouseleave="libraryHover = false" color="#709775" style="color: white;" rounded="xl">
           <v-card-title class="font-weight-bold">Busca canciones <v-icon>mdi-music</v-icon></v-card-title>
           <v-card-text>Busca canciones en la plataforma</v-card-text>
 
@@ -42,8 +42,8 @@
 
 
       <v-col cols="12" sm="4" class="d-flex">
-        <v-card class="mx-auto" @mouseover="libraryHover = true" @mouseleave="libraryHover = false"
-          @click="showModal = true" color="black" rounded="xl">
+        <v-card class="mx-auto button" @mouseover="libraryHover = true" @mouseleave="libraryHover = false"
+          @click="showModal = true" color="grey" rounded="xl">
           <v-card-title class="font-weight-bold">Eliminar usuario <v-icon>mdi-delete-alert</v-icon></v-card-title>
           <v-card-text>Función para usuarios administrador</v-card-text>
 
@@ -52,8 +52,8 @@
 
 
       <v-col cols="12" sm="4" class="d-flex">
-        <v-card class="mx-auto" to="/" @mouseover="libraryHover = true" @mouseleave="libraryHover = false" color="red"
-          rounded="xl">
+        <v-card class="mx-auto button" to="/" @mouseover="libraryHover = true" @mouseleave="libraryHover = false"
+          color="black" rounded="xl">
           <v-card-title class="font-weight-bold">Salir <v-icon>mdi-exit-to-app</v-icon></v-card-title>
           <v-card-text>Salir de Music-On</v-card-text>
 
@@ -63,10 +63,10 @@
 
 
     <v-dialog v-model="showModal" class="center-dialog">
-      <v-card width="100%">
+      <v-card width="100%" @keyup.enter="checkPassword">
         <v-card-title>Ingresa la contraseña</v-card-title>
         <v-card-text>
-          <v-text-field v-model="password" type="password" @keyup.enter="checkPassword"></v-text-field>
+          <v-text-field v-model="password" type="password"></v-text-field>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -111,7 +111,7 @@ export default {
 </script>
 <style>
 .v-card {
-  height: 80%;
+  height: 120px;
   width: 300px;
   border-radius: 10px;
   margin: 10px;
@@ -122,5 +122,77 @@ export default {
   justify-content: center;
   align-items: center;
 
+}
+
+.button {
+  background-color: #709775;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.button:hover {
+  -webkit-animation: wobble-hor-bottom 0.5s both;
+  animation: wobble-hor-bottom 0.5s both;
+  transform-origin: center;
+  /* centers the animation around the button */
+}
+
+@-webkit-keyframes wobble-hor-bottom {
+
+  0%,
+  100% {
+    transform: translateX(0%);
+  }
+
+  15% {
+    transform: translateX(-3px) rotate(-3deg);
+  }
+
+  30% {
+    transform: translateX(2px) rotate(2deg);
+  }
+
+  45% {
+    transform: translateX(-2px) rotate(-1deg);
+  }
+
+  60% {
+    transform: translateX(1px) rotate(0.5deg);
+  }
+
+  75% {
+    transform: translateX(-1px) rotate(-0.5deg);
+  }
+}
+
+@keyframes wobble-hor-bottom {
+
+  0%,
+  100% {
+    transform: translateX(0%);
+  }
+
+  15% {
+    transform: translateX(-3px) rotate(-3deg);
+  }
+
+  30% {
+    transform: translateX(2px) rotate(2deg);
+  }
+
+  45% {
+    transform: translateX(-2px) rotate(-1deg);
+  }
+
+  60% {
+    transform: translateX(1px) rotate(0.5deg);
+  }
+
+  75% {
+    transform: translateX(-1px) rotate(-0.5deg);
+  }
 }
 </style>
