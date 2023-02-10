@@ -3,21 +3,6 @@
     <v-responsive class="d-flex align-center text-center fill-height">
       <v-img contain height="200" src="@/assets/logoMO.svg" class="logo" />
 
-      <div v-if="error">Oops! Error encountered: {{ error.message }}</div>
-        <div v-else-if="usuariosData">
-          <div v-for="({ id, Username, Nombre,Apellido,Email,password,Playlists }, i) in usuariosData" :key="id">
-            <h2>
-              {{ ++i}}
-              {{ Username }}
-              {{ Nombre }}
-              {{ Apellido }}
-              {{ Email }}
-              {{ password }}
-              {{ Playlists }}
-            </h2>
-          </div>
-        </div>
-
       <h1 class="text-h2 font-weight-bold mt-5">Music-On</h1>
 
 
@@ -34,7 +19,7 @@
             <v-text-field v-model="password" :rules="rulesPass" label="Contraseña"
               :type="show1 ? 'text' : 'password'"></v-text-field>
 
-            <v-btn @submit.prevent type="submit" to="/MainPage" block class="mt-2 "
+            <v-btn @submit.prevent type="submit" @click="login" block class="mt-2 "
               style="background-color: #709775; color: white">Ingresar</v-btn>
             <v-btn to="/createAccount" block class="mt-2" style="background-color: #644536; color: white;">Crear
               cuenta</v-btn>
@@ -77,6 +62,30 @@ export default {
 
     ],
   }),
+  methods: {
+    async login() {
+      let emailMatch = false
+      let passwordMatch = false
+      // Verificar si el correo y la contraseña corresponden a un usuario existente
+      this.usuariosData.forEach(user => {
+        if (user.email === this.email) {
+          emailMatch = true
+          if (user.password === this.password) {
+            passwordMatch = true
+          }
+        }
+      })
+      
+      // Si ambos son true ingresar
+      if (emailMatch && passwordMatch) {
+
+        this.$router.push("/MainPage");
+      } else {
+        // Mostrar un error
+        this.error = { message: "Correo o contraseña incorrectos" };
+      }
+    },
+  },
 }
 </script>
 

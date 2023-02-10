@@ -15,7 +15,7 @@
 
         <v-col cols="5">
 
-          <v-form @submit.prevent>
+          <v-form @submit.prevent = "createUsuario">
             <v-text-field v-model="email" :rules="rules" label="Correo"></v-text-field>
 
             <v-text-field v-model="name" :rules="rules" label="Nombre"></v-text-field>
@@ -35,9 +35,13 @@
 </template>
   
 <script>
+import axios from 'axios'
+
 export default {
   data: () => ({
     email: '',
+    name: '',
+    lastName: '',
     password: '',
     rules: [
       value => {
@@ -54,6 +58,24 @@ export default {
 
     ],
   }),
+  methods: {
+    async createUsuario() {
+      try {
+        const usuario = {
+          username: this.name + ' ' + this.lastName,
+          nombre: this.name,
+          apellido: this.lastName,
+          email: this.email,
+          password: this.password,
+          playlists: {}
+        }
+        const res = await axios.post('http://localhost:8000/api/usuarios', usuario)
+        console.log(res.data)
+      } catch (err) {
+        console.error(err)
+      }
+    }
+  }
 }
 </script>
 

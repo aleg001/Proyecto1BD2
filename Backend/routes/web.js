@@ -6,5 +6,7 @@ const router = express.Router();
 
 router.get("/music", MusicController.getAllDoc);
 router.get("/usuarios", UsuarioController.getAllDocc);
+router.post('/usuarios', UsuarioController.create);
+
 
 export default router;

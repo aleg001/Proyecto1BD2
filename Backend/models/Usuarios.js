@@ -1,13 +1,13 @@
 import mongoose from "mongoose";
 
 const UsuarioSchema = new mongoose.Schema({
-    Username:{type:String, required:true, trim:true},
-    Nombre:{type:String, required:true, trim:true},
-    Apellido:{type:String, required:true, trim:true},
-    Email:{type:String, required:true, trim:true},
+    username:{type:String, required:true, trim:true},
+    nombre:{type:String, required:true, trim:true},
+    apellido:{type:String, required:true, trim:true},
+    email:{type:String, required:true, trim:true},
     password:{type:String, required:true, trim:true},
-    Playlist:{type:Object, required:true, trim:true},
-})
+    playlist:{type:Array, required:true},
+}, { versionKey: false })
 
 const UsuarioModel = mongoose.model("usuarios",UsuarioSchema)
 
