@@ -2,7 +2,7 @@
   <v-app-bar color="#1A154E">
     <v-app-bar-nav-icon @click="drawer = true" style="color:white"></v-app-bar-nav-icon>
 
-    <v-toolbar-title style="color:white">Music-On</v-toolbar-title>
+    <v-toolbar-title style="color:white; font-weight:900; font-style: italic;">Music-On</v-toolbar-title>
   </v-app-bar>
 
   <v-navigation-drawer v-model="drawer" temporary>
@@ -22,7 +22,7 @@
           <v-list-item-title>Mi cuenta</v-list-item-title>
         </v-list-item>
 
-        <v-list-item to="/PlaylistCreation">
+        <v-list-item to="/AddPlaylists">
           <v-list-item-icon>
             <v-icon>mdi-playlist-plus</v-icon>
           </v-list-item-icon>
@@ -34,6 +34,14 @@
           </v-list-item-icon>
           <v-list-item-title>Agregar canciones</v-list-item-title>
         </v-list-item>
+
+        <v-list-item to="/MongoCharts">
+          <v-list-item-icon>
+            <v-icon>mdi-chart-areaspline</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>Estadísticas de canciones</v-list-item-title>
+        </v-list-item>
+
         <v-list-item to="/">
           <v-list-item-icon>
             <v-icon>mdi-exit-to-app</v-icon>
