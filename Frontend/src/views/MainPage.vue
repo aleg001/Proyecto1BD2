@@ -16,7 +16,7 @@
         <v-card class="mx-auto" to="/AddPlaylists" @mouseover="searchHover = true" @mouseleave="searchHover = false"
           color="secondary" rounded="xl">
           <v-card-title class="font-weight-bold">Crear Playlist <v-icon>mdi-playlist-plus</v-icon></v-card-title>
-          <v-card-text>Discover new music, podcasts, and videos</v-card-text>
+          <v-card-text>Crea una playlist con tus canciones favoritas</v-card-text>
 
         </v-card>
       </v-col>

@@ -1,8 +1,8 @@
 <template>
   <AppBar />
-  <h1 class="text-center mt-15"> Visualización de gráficos</h1>
+  <h1 class=" mt-15 text-h2 font-weight-bold text-center">Visualización de gráficos</h1>
 
-  <v-container fluid>
+  <v-container fluid class="mt-2">
     <v-col cols="15">
       <v-row justify="center" align="center" class="mb-10">
 

@@ -18,11 +18,11 @@
             <v-col cols="5">
 
                 <v-form @submit.prevent="createUsuario">
-                    <v-text-field v-model="email" :rules="rules" label="Correo"></v-text-field>
+                    <v-text-field v-model="email" label="Correo"></v-text-field>
 
-                    <v-text-field v-model="name" :rules="rules" label="Nombre"></v-text-field>
+                    <v-text-field v-model="name" label="Nombre"></v-text-field>
 
-                    <v-text-field v-model="lastName" :rules="rules" label="Apellido"></v-text-field>
+                    <v-text-field v-model="lastName" label="Apellido"></v-text-field>
 
                     <v-text-field v-model="password" :rules="rulesPass" label="Contraseña"
                         :type="show1 ? 'text' : 'password'"></v-text-field>
