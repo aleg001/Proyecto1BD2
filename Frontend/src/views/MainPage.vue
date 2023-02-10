@@ -63,7 +63,7 @@
 
 
     <v-dialog v-model="showModal" class="center-dialog">
-      <v-card width="100%" @keyup.enter="checkPassword">
+      <v-card width="100%" height="100%" @keyup.enter="checkPassword">
         <v-card-title>Ingresa la contraseña</v-card-title>
         <v-card-text>
           <v-text-field v-model="password" type="password"></v-text-field>
@@ -117,12 +117,6 @@ export default {
   margin: 10px;
 }
 
-.center-dialog {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
 
 .button {
   background-color: #709775;
