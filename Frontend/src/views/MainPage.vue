@@ -66,7 +66,7 @@
       <v-card width="100%">
         <v-card-title>Ingresa la contraseña</v-card-title>
         <v-card-text>
-          <v-text-field v-model="password" type="password"></v-text-field>
+          <v-text-field v-model="password" type="password" @keyup.enter="checkPassword"></v-text-field>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -95,7 +95,7 @@ export default {
   methods: {
     checkPassword() {
       if (this.password === 'musicOn') {
-        this.$router.push('/deleteUser');
+        this.$router.push('/DeleteUsers');
         this.modal = false;
       } else {
         this.password = '';
