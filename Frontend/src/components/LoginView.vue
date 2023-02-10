@@ -43,7 +43,7 @@ export default {
       error,
     };
   },
-  
+
   data: () => ({
     email: '',
     password: '',
@@ -73,9 +73,10 @@ export default {
           if (user.password === this.password) {
             passwordMatch = true
           }
+
         }
       })
-      
+
       // Si ambos son true ingresar
       if (emailMatch && passwordMatch) {
 
@@ -83,6 +84,7 @@ export default {
       } else {
         // Mostrar un error
         this.error = { message: "Correo o contraseña incorrectos" };
+        alert("Correo o contraseña incorrectos")
       }
     },
   },
