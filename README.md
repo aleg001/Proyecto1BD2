@@ -19,12 +19,9 @@ Requerimientos cumplidos:
 ## Project setup
 
 ```
-
-
 npm install
 cd Proyecto1BD2
 cd Frontend / cd Backend
-
 ```
 
 ### Compiles and hot-reloads for development
