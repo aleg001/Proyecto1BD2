@@ -2,7 +2,7 @@
     <AppBar />
 
 
-    <h1 class="text-center mt-15"> Nueva playlist</h1>
+    <h1 class="text-center mt-15 text-h2 font-weight-bold"> Nueva playlist</h1>
     <v-container>
         <v-col>
 
