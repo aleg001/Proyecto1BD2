@@ -89,13 +89,10 @@ export default {
 
 
 .bg {
-
-  background: rgba(53, 107, 164, 0);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(13px);
-  -webkit-backdrop-filter: blur(13px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 38px;
+  box-shadow: -35px 35px 68px 0px rgba(145, 192, 255, 0.5), inset 8px -8px 16px 0px rgba(145, 192, 255, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);
 
 }
 </style>

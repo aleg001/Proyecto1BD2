@@ -1,11 +1,11 @@
 <template>
   <AppBar />
   <h1 class="text-center mt-15 text-h2 font-weight-bold titleText"> Homepage</h1>
-  <v-container class="mt-10">
+  <v-container class="mt-10 boxes">
     <h4 class="mx-auto ml-10 mb-3">Descubre todas las posibilidades de Music-On</h4>
     <v-row>
       <v-col cols="12" sm="4" class="d-flex">
-        <v-card class="mx-auto button" to="/Profile" @mouseover="browseHover = true" @mouseleave="browseHover = false"
+        <v-card class="mx-auto button " to="/Profile" @mouseover="browseHover = true" @mouseleave="browseHover = false"
           color="#709775" style="color: white;" rounded="xl">
           <v-card-title class="font-weight-bold">Mi perfil <v-icon>mdi-account</v-icon></v-card-title>
           <v-card-text>Edita la información de tu perfil</v-card-text>
@@ -116,6 +116,13 @@ export default {
   width: 300px;
   border-radius: 10px;
   margin: 10px;
+}
+
+.boxes {
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 38px;
+  box-shadow: 0px 35px 68px 0px rgba(126, 211, 33, 0.5), inset 0px -8px 16px 0px rgba(126, 211, 33, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);
 }
 
 
