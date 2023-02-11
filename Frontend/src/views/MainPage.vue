@@ -1,7 +1,8 @@
 <template>
   <AppBar />
-  <h1 class="text-center mt-15 text-h2 font-weight-bold"> Homepage</h1>
+  <h1 class="text-center mt-15 text-h2 font-weight-bold titleText"> Homepage</h1>
   <v-container class="mt-10">
+    <h4 class="mx-auto ml-10 mb-3">Descubre todas las posibilidades de Music-On</h4>
     <v-row>
       <v-col cols="12" sm="4" class="d-flex">
         <v-card class="mx-auto button" to="/Profile" @mouseover="browseHover = true" @mouseleave="browseHover = false"
@@ -117,6 +118,10 @@ export default {
   margin: 10px;
 }
 
+
+.titleText {
+  font-family: 'Radio Canada', sans-serif !important;
+}
 
 .button {
   background-color: #709775;

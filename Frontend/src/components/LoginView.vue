@@ -1,9 +1,9 @@
 <template>
-  <v-container class="fill-height">
+  <v-container class="fill-height bg">
     <v-responsive class="d-flex align-center text-center fill-height">
       <v-img contain height="200" src="@/assets/logoMO.svg" class="logo" />
 
-      <h1 class="text-h2 font-weight-bold mt-5">Music-On</h1>
+      <h1 class="text-h2 font-weight-bold mt-5 logoText">Music-On</h1>
 
 
       <h5>Mensajes al ritmo de tu música</h5>
@@ -108,6 +108,23 @@ export default {
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+.logoText {
+  font-family: 'Aboreto', cursive !important;
+}
+
+.bg {
+
+  background: rgba(53, 107, 164, 0);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
 }
 </style>
 

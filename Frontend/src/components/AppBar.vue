@@ -3,7 +3,8 @@
     <v-app-bar-nav-icon @click="drawer = true" style="color:white"></v-app-bar-nav-icon>
 
     <v-list-item to="/MainPage">
-      <v-toolbar-title style="color:white; font-weight:900; font-style: italic;">Music-On </v-toolbar-title>
+      <v-toolbar-title style="color:white; font-weight:900;" class="logoText">Music-On
+      </v-toolbar-title>
 
     </v-list-item>
 
@@ -67,3 +68,8 @@ export default {
   }),
 }
 </script>
+<style>
+.logoText {
+  font-family: 'Aboreto', cursive !important;
+}
+</style>

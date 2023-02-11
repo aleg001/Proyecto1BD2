@@ -1,10 +1,10 @@
 <template >
   <v-container class="fill-height ">
-    <v-responsive class="d-flex align-center text-center fill-height">
+    <v-responsive class="d-flex align-center text-center fill-height bg">
 
 
 
-      <h1 class="text-h2 font-weight-bold ">Registro de cuentas</h1>
+      <h1 class="text-h2 font-weight-bold titleText ">Registro de cuentas</h1>
 
 
       <h5 class="mt-3">Ingresa tu información para ser parte de la familia Music-On</h5>
@@ -15,7 +15,7 @@
 
         <v-col cols="5">
 
-          <v-form @submit.prevent = "createUsuario">
+          <v-form @submit.prevent="createUsuario">
             <v-text-field v-model="email" :rules="rules" label="Correo"></v-text-field>
 
             <v-text-field v-model="name" :rules="rules" label="Nombre"></v-text-field>
@@ -81,3 +81,21 @@ export default {
 
   
   
+
+<style>
+.titleText {
+  font-family: 'Radio Canada', sans-serif !important;
+}
+
+
+.bg {
+
+  background: rgba(53, 107, 164, 0);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+}
+</style>

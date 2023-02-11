@@ -2,7 +2,7 @@
     <AppBar />
 
 
-    <h1 class="text-center mt-15 text-h2 font-weight-bold"> Nueva playlist</h1>
+    <h1 class="text-center mt-15 text-h2 font-weight-bold titleText"> Nueva playlist</h1>
     <v-container>
         <v-col>
 
@@ -42,4 +42,10 @@ export default {
         AppBar
     }
 }
-</script>
+</script> 
+
+<style>
+.titleText {
+    font-family: 'Radio Canada', sans-serif !important;
+}
+</style>

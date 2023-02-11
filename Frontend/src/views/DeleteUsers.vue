@@ -1,7 +1,7 @@
 <template>
     <AppBar />
 
-    <h1 class="text-center mt-15 text-h2 font-weight-bold">Eliminar Usuarios</h1>
+    <h1 class="text-center mt-15 text-h2 font-weight-bold titleText">Eliminar Usuarios</h1>
     <v-container>
         <v-col>
             <v-form @submit.prevent="deleteUser">
@@ -70,3 +70,10 @@ export default {
     }
 }
 </script>
+
+
+<style>
+.titleText {
+    font-family: 'Radio Canada', sans-serif !important;
+}
+</style>

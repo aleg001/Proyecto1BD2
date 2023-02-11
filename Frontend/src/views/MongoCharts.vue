@@ -1,6 +1,6 @@
 <template>
   <AppBar />
-  <h1 class=" mt-15 text-h2 font-weight-bold text-center">Visualización de gráficos</h1>
+  <h1 class=" mt-15 text-h2 font-weight-bold text-center titleText">Visualización de gráficos</h1>
 
   <v-container fluid class="mt-2">
     <v-col cols="15">
@@ -42,3 +42,9 @@ export default {
   },
 };
 </script>
+
+<style>
+.titleText {
+  font-family: 'Radio Canada', sans-serif !important;
+}
+</style>
