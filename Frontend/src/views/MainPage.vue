@@ -1,4 +1,4 @@
-<template>
+<template >
   <AppBar />
   <h1 class="text-center mt-15 text-h2 font-weight-bold titleText"> Homepage</h1>
   <v-container class="mt-10 boxes">
@@ -117,6 +117,8 @@ export default {
   border-radius: 10px;
   margin: 10px;
 }
+
+
 
 .boxes {
 
