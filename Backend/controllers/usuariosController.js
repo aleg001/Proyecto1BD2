@@ -38,6 +38,23 @@ class UsuarioController {
           res.status(400).send({ message: 'Error al actualizar el usuario', error })
         }
       }
+
+      static delete = async (req, res) => {
+        const { email } = req.body
+        try {
+          const usuario = await UsuarioModel.findOneAndDelete({ email });
+          res.status(200).send({
+            message: "Usuario eliminado con éxito",
+            usuario,
+          });
+        } catch (error) {
+          res.status(500).send({
+            message: "Error al eliminar usuario",
+            error,
+          });
+        }
+      }
+
 }
 
 export default UsuarioController
