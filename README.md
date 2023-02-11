@@ -93,6 +93,7 @@ This software uses the following packages:
 - [Vuetify](https://next.vuetifyjs.com/en/)
 - [MongoDB Atlas](https://www.mongodb.com/atlas/database)
 - [Express](https://expressjs.com/)
+- [Mongoose](https://mongoosejs.com/)
 
 
 ## Credits
