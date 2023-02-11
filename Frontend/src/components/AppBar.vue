@@ -33,7 +33,7 @@
           </v-list-item-icon>
           <v-list-item-title>Crear Playlist</v-list-item-title>
         </v-list-item>
-        <v-list-item to="/AddSongs">
+        <v-list-item to="/SearchSongs">
           <v-list-item-icon>
             <v-icon>mdi-music</v-icon>
           </v-list-item-icon>

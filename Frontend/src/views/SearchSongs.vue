@@ -6,7 +6,7 @@
             <v-form @submit.prevent="deleteUser">
                 <v-row></v-row>
                 <div class="text-subtitle-1 text-medium-emphasis">Nombre de canción o artista </div>
-                <v-autocomplete clearable label="Autocomplete"></v-autocomplete>
+                <v-autocomplete clearable label="Canción/Artista"></v-autocomplete>
 
                 <v-btn type="submit" block class="mt-5 primary" style="background-color: #709775; color: white">Buscar
                     canción</v-btn>
