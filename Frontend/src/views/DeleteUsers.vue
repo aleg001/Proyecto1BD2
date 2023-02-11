@@ -6,15 +6,16 @@
         <v-col>
             <v-form @submit.prevent="deleteUser">
                 <v-row></v-row>
-                <div class="text-subtitle-1 text-medium-emphasis">Correo    </div>
-                <v-text-field  v-model="email" label="Ingresa el correo del usuario a eliminar" :rules="rules" 
+                <div class="text-subtitle-1 text-medium-emphasis">Correo </div>
+                <v-text-field v-model="email" label="Ingresa el correo del usuario a eliminar" :rules="rules"
                     hide-details="auto"></v-text-field>
 
                 <div class=" mt-5 text-subtitle-1 text-medium-emphasis">Motivo de eliminación</div>
-                <v-text-field v-model="motivo" label="Agrega una descripción" :rules="rules" hide-details="auto"></v-text-field>
+                <v-text-field v-model="motivo" label="Agrega una descripción" :rules="rules"
+                    hide-details="auto"></v-text-field>
 
-                <v-btn type="submit" block class="mt-5 secondary" style="background-color: #644536; color: white">Crear
-                    playlist</v-btn>
+                <v-btn type="submit" block class="mt-5 secondary"
+                    style="background-color: #644536; color: white">Eliminar usuario</v-btn>
 
             </v-form>
         </v-col>
@@ -28,7 +29,7 @@ import AppBar from '@/components/AppBar.vue';
 import axios from 'axios'
 
 export default {
-    
+
     data: () => ({
         email: '',
         motivo: '',
@@ -44,8 +45,8 @@ export default {
             // escribir la razon del porque se elimino
             try {
                 const usuarioEliminado = {
-                email: this.email,
-                motivo: this.motivo
+                    email: this.email,
+                    motivo: this.motivo
                 }
                 const res = await axios.post('http://localhost:8000/api/usuarioseliminados', usuarioEliminado)
                 console.log(res.data)
@@ -53,9 +54,9 @@ export default {
                 console.error(err)
             }
             // Eliminarlo de la base de datos
-            try { 
+            try {
                 const usuario = {
-                    email : this.email
+                    email: this.email
                 }
                 await axios.delete('http://localhost:8000/api/usuarios/' + usuario.id, {
                     data: usuario
