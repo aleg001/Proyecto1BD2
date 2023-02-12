@@ -3,7 +3,7 @@
 
 
 
-    <v-responsive class=" fill-height">
+    <v-responsive class=" fill-height ">
 
 
         <h1 class=" mt-15 text-h2 font-weight-bold text-center titleText">Actualizar mi perfil</h1>
@@ -11,7 +11,7 @@
 
 
 
-        <div class="py-10" />
+        <div class="py-10 " />
 
         <v-row class="d-flex align-center justify-center">
 
@@ -94,5 +94,16 @@ export default {
 <style>
 .titleText {
     font-family: 'Radio Canada', sans-serif !important;
+}
+
+
+.boxes {
+
+    backdrop-filter: blur(5px);
+
+    background-color: rgba(255, 255, 255, 1);
+
+    border-radius: 26px;
+
 }
 </style>
