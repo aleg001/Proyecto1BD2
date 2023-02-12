@@ -5,12 +5,12 @@ import UsuarioEliminadoController from '../controllers/usuarioseliminadosControl
 
 const router = express.Router()
 
-router.get('/music', MusicController.getAllDoc)
 router.get('/usuarios', UsuarioController.getAllDocc)
 router.post('/usuarios', UsuarioController.create)
 router.put('/usuarios', UsuarioController.update)
 router.delete('/usuarios/:id', UsuarioController.delete)
 router.get('/usuarioseliminados', UsuarioEliminadoController.getAllDoc)
 router.post('/usuarioseliminados', UsuarioEliminadoController.create)
+router.get('/music', MusicController.read)
 
 export default router
