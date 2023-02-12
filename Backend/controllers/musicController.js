@@ -9,6 +9,21 @@ class MusicController {
       console.log(error)
     }
   }
+
+  static read = async (req, res) => {
+    try {
+      const { name_artist } = req.body
+      const existing_song = await MusicModel.findOne({ name_artist })
+      if (existingUser) {
+        return res
+          .status(400)
+          .send({ message: 'Music' })
+      }
+    } catch (error) {
+      res.status(400).send({ message: 'Error', error })
+    }
+  }
+
 }
 
 export default MusicController
