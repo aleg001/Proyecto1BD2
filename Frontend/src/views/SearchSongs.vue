@@ -31,12 +31,18 @@ export default {
     methods: {
     async findSong() {
       try {
-        const artist_song = this.name
-        const res = await axios.get('http://localhost:8000/api/music', artist_song)
-        console.log(res)
-        return res
+        const name = this.name;
+        const query = {
+          $or: [
+            { 'artist.name': { $regex: name, $options: 'i' } },
+            { 'song.title': { $regex: name, $options: 'i' } }
+          ]
+        };
+        const res = await axios.get('http://localhost:8000/api/music', { params: { query } });
+        console.log(res.data);
+        return res.data;
       } catch (err) {
-        console.error(err)
+        console.error(err);
       }
     }
   }
