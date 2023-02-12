@@ -12,19 +12,18 @@ class MusicController {
 
   static read = async (req, res) => {
     try {
-      const { name_artist } = req.body
-      const existing_song = await MusicModel.find({
-        $or: [
-           { "artist.name": { $regex: name_artist } },
-           { "song.title": { $regex: name_artist } }
-        ]
-     })
-      if (existing_song) {
-        return res
-          .existing_song
-      }
+      const name = req
+      const result = await MusicModel.aggregate([
+        { $match : {
+          '$or' : [
+            { 'artist.name' : name },
+            { 'song.title' : name }
+          ]
+        }}
+      ])
+      res.send(result)
     } catch (error) {
-      res.status(400).send({ message: 'No existe la canción', error })
+      res.status(400).send({ message: 'No se encuentra', error })
     }
   }
 
