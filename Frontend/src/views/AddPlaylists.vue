@@ -20,14 +20,14 @@
                 <div class=" mt-5 text-subtitle-1 text-medium-emphasis">Canciones</div>
 
                 <v-autocomplete
-                    v-model="friends"
+                    v-model="playlist_songs"
                     :disabled="isUpdating"
-                    :items="people"
+                    :items="songs_list"
                     chips
                     closable-chips
                     color="blue-grey-lighten-2"
-                    item-title="name"
-                    item-value="name"
+                    item-title="songs"
+                    item-value="songs"
                     label="Agrega las canciones"
                     multiple
                 >
@@ -35,7 +35,7 @@
                         <v-chip
                         v-bind="props"
                         :prepend-avatar="item.raw.avatar"
-                        :text="item.raw.name"
+                        :text="item.raw"
                         ></v-chip>
                     </template>
 
@@ -43,10 +43,11 @@
                         <v-list-item
                         v-bind="props"
                         :prepend-avatar="item?.raw?.avatar"
-                        :title="item?.raw?.name"
+                        :title="item?.raw"
                         :subtitle="item?.raw?.group"
                         ></v-list-item>
                     </template>
+
                 </v-autocomplete>
 
                 <v-btn type="submit" block class="mt-5 " style="background-color: #709775; color: white">Crear
@@ -64,9 +65,21 @@
 import AppBar from '@/components/AppBar.vue';
 
 export default {
-    data: () => ({
-        items: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-    }),
+    data () {
+
+      return {
+        autoUpdate: true,
+        playlist_songs: [],
+        isUpdating: false,
+        songs_list: ["1", "2"],
+        timeout: null,
+      }
+    },
+    methods: {
+        async findSongs() {
+            
+        }
+    },
     components: {
         AppBar
     }

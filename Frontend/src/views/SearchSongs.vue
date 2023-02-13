@@ -32,26 +32,26 @@ export default {
         AppBar,
     },
     data() {
-        return {
-            res: null
-        };
+      return {
+          res: null
+      };
     },
     methods: {
-    async findSong() {
-      try {
-        const query = {
-          $or: [
-            { 'artist': { $regex: this.name, $options: 'i' } },
-            { 'title': { $regex: this.name, $options: 'i' } }
-          ]
-        };
-        const res = await axios.post('http://localhost:8000/api/music', query)
-        this.res = JSON.stringify(res.data, null, 2)
-      } catch (err) {
-        console.error(err)
+      async findSong() {
+        try {
+          const query = {
+            $or: [
+              { 'artist': { $regex: this.name, $options: 'i' } },
+              { 'title': { $regex: this.name, $options: 'i' } }
+            ]
+          };
+          const res = await axios.post('http://localhost:8000/api/music', query)
+          this.res = JSON.stringify(res.data, null, 2)
+        } catch (err) {
+          console.error(err)
+        }
       }
     }
-  }
 };
 </script>
 
