@@ -10,10 +10,13 @@
 
                 <v-btn type="submit" block class="mt-5 primary" style="background-color: #709775; color: white">Buscar
                     canción</v-btn>
-
-                {{ res }}
-
             </v-form>
+        </v-col>
+    </v-container>
+
+    <v-container>
+        <v-col>
+            <pre v-if="res">{{ res }}</pre>
         </v-col>
     </v-container>
 
@@ -28,6 +31,11 @@ export default {
     components: {
         AppBar,
     },
+    data() {
+        return {
+            res: null
+        };
+    },
     methods: {
     async findSong() {
       try {
@@ -37,11 +45,10 @@ export default {
             { 'song.title': { $regex: this.name, $options: 'i' } }
           ]
         };
-        const res = await axios.post('http://localhost:8000/api/music', query);
-        console.log(res.data);
-        return res.data;
+        const res = await axios.post('http://localhost:8000/api/music', query)
+        this.res = JSON.stringify(res.data, null, 2)
       } catch (err) {
-        console.error(err);
+        console.error(err)
       }
     }
   }

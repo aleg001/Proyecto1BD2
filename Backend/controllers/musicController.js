@@ -11,13 +11,12 @@ class MusicController {
   }
 
   static find = async (req, res) => {
-    const query = req.body;
+    const query = req.body
     try {
-      const docs = await MusicModel.find(query);
-      res.json(docs);
-      console.log(docs) 
+      const docs = await MusicModel.find(query)
+      res.json(docs)
     } catch (err) {
-      res.status(500).json({ message: err.message });
+      res.status(500).json({ message: err.message })
     }
   }
 
