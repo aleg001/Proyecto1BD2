@@ -18,7 +18,36 @@
                 <v-text-field label="Agrega una descripción" :rules="rules" hide-details="auto"></v-text-field>
 
                 <div class=" mt-5 text-subtitle-1 text-medium-emphasis">Canciones</div>
-                <v-select label="Agrega las canciones" :rules="rules" hide-details="auto" multiple=""></v-select>
+
+                <v-autocomplete
+                    v-model="friends"
+                    :disabled="isUpdating"
+                    :items="people"
+                    chips
+                    closable-chips
+                    color="blue-grey-lighten-2"
+                    item-title="name"
+                    item-value="name"
+                    label="Agrega las canciones"
+                    multiple
+                >
+                    <template v-slot:chip="{ props, item }">
+                        <v-chip
+                        v-bind="props"
+                        :prepend-avatar="item.raw.avatar"
+                        :text="item.raw.name"
+                        ></v-chip>
+                    </template>
+
+                    <template v-slot:item="{ props, item }">
+                        <v-list-item
+                        v-bind="props"
+                        :prepend-avatar="item?.raw?.avatar"
+                        :title="item?.raw?.name"
+                        :subtitle="item?.raw?.group"
+                        ></v-list-item>
+                    </template>
+                </v-autocomplete>
 
                 <v-btn type="submit" block class="mt-5 " style="background-color: #709775; color: white">Crear
                     playlist</v-btn>
