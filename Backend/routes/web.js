@@ -11,6 +11,6 @@ router.put('/usuarios', UsuarioController.update)
 router.delete('/usuarios/:id', UsuarioController.delete)
 router.get('/usuarioseliminados', UsuarioEliminadoController.getAllDoc)
 router.post('/usuarioseliminados', UsuarioEliminadoController.create)
-router.get('/music', MusicController.read)
+router.post('/music', MusicController.find)
 
 export default router

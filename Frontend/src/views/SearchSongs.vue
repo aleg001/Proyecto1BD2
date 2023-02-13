@@ -31,14 +31,13 @@ export default {
     methods: {
     async findSong() {
       try {
-        const name = this.name;
         const query = {
           $or: [
-            { 'artist.name': { $regex: name, $options: 'i' } },
-            { 'song.title': { $regex: name, $options: 'i' } }
+            { 'artist.name': { $regex: this.name, $options: 'i' } },
+            { 'song.title': { $regex: this.name, $options: 'i' } }
           ]
         };
-        const res = await axios.get('http://localhost:8000/api/music', { params: { query } });
+        const res = await axios.post('http://localhost:8000/api/music', query);
         console.log(res.data);
         return res.data;
       } catch (err) {

@@ -10,16 +10,14 @@ class MusicController {
     }
   }
 
-  static read = async (req, res) => {
+  static find = async (req, res) => {
+    const query = req.body;
     try {
-      const name = req.query.name;
-      const results = await MusicController.find({ $or: [
-        { 'artist.name': { $regex: name, $options: 'i' } },
-        { 'song.title': { $regex: name, $options: 'i' } }
-      ] });
-      res.send(results);
-    } catch (error) {
-      res.status(400).send({ message: 'No se encuentra', error })
+      const docs = await MusicModel.find(query);
+      res.json(docs);
+      console.log(docs) 
+    } catch (err) {
+      res.status(500).json({ message: err.message });
     }
   }
 
