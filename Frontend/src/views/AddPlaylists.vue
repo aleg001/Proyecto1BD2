@@ -21,7 +21,6 @@
 
                 <v-autocomplete
                     v-model="playlist_songs"
-                    :disabled="isUpdating"
                     :items="songs_list"
                     chips
                     closable-chips
@@ -34,17 +33,15 @@
                     <template v-slot:chip="{ props, item }">
                         <v-chip
                         v-bind="props"
-                        :prepend-avatar="item.raw.avatar"
-                        :text="item.raw"
+                        :text="item.raw.title"
                         ></v-chip>
                     </template>
 
                     <template v-slot:item="{ props, item }">
                         <v-list-item
                         v-bind="props"
-                        :prepend-avatar="item?.raw?.avatar"
-                        :title="item?.raw"
-                        :subtitle="item?.raw?.group"
+                        :title="item?.raw?.title"
+                        :subtitle="item?.raw?.artist"
                         ></v-list-item>
                     </template>
 
@@ -63,6 +60,7 @@
 <script>
 
 import AppBar from '@/components/AppBar.vue';
+import axios from 'axios'
 
 export default {
     data () {
@@ -70,15 +68,18 @@ export default {
       return {
         autoUpdate: true,
         playlist_songs: [],
-        isUpdating: false,
-        songs_list: ["1", "2"],
-        timeout: null,
+        songs_list: [],
       }
     },
     methods: {
         async findSongs() {
-            
+            const res = await axios.get('http://localhost:8000/api/music')
+            const new_json = JSON.stringify(res.data, null, 2)
+            this.songs_list = JSON.parse(new_json)
         }
+    },
+    beforeMount(){
+        this.findSongs()
     },
     components: {
         AppBar
