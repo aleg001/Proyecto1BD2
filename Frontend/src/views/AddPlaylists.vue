@@ -25,8 +25,6 @@
                     chips
                     closable-chips
                     color="blue-grey-lighten-2"
-                    item-title="songs"
-                    item-value="songs"
                     label="Agrega las canciones"
                     multiple
                 >
