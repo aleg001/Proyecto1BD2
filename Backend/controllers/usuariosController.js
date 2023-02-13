@@ -25,7 +25,6 @@ class UsuarioController {
         apellido,
         email,
         password,
-        playlists,
       })
       await usuario.save()
       res.status(201).send({ message: 'Usuario creado con éxito' })

@@ -7,7 +7,6 @@ const UsuarioSchema = new mongoose.Schema(
     apellido: { type: String, required: true, trim: true },
     email: { type: String, required: true, trim: true },
     password: { type: String, required: true, trim: true },
-    playlist: { type: Array, required: false },
   },
   { versionKey: false }
 )
