@@ -41,8 +41,8 @@ export default {
       try {
         const query = {
           $or: [
-            { 'artist.name': { $regex: this.name, $options: 'i' } },
-            { 'song.title': { $regex: this.name, $options: 'i' } }
+            { 'artist': { $regex: this.name, $options: 'i' } },
+            { 'title': { $regex: this.name, $options: 'i' } }
           ]
         };
         const res = await axios.post('http://localhost:8000/api/music', query)
