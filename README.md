@@ -70,19 +70,33 @@ You can [download](https://github.com/aleg001/Proyecto1BD2) the latest installab
 ## Requirements
 
 
-- ✅ 5 pts - Document creation
+- ✅ 5 pts - Document creation (create new users)
 
-- ✅ 5 pts - Document update
+- ✅ 5 pts - Document update (update profile information)
 
-- ✅ 5 pts - Document query
+- ✅ 5 pts - Document query (search for songs)
 
-- ✅ 5 pts - Document delete
+- ✅ 5 pts - Document delete (deleting users)
 
-- ✅ 15 pts - Mongo Charts
+- ✅ 5 pts - Projection (find with only a few parameters)
 
-- ✅ 10 pts - BI Connectors
+- ✅ 5 pts - Queries ordering (Desc order)
+
+- ✅ 10 pts - Array Managment (Playlist)
+
+- ✅ 5 pts - Registers Limit (find with Limit)
+
+- ✅ 10 pts - Simple data aggregation (song finder)
+
+- ✅ 10 pts - Complex data aggregation (Mongo Charts KPI's)
+
+- ✅ 15 pts - Mongo Charts 
+
+- ✅ 10 pts - BI Connectors (Tableau integration)
 
 - ✅ 5 pts - Frontend
+
+TOTAL: 100 pts
 
 ## Packages
 
