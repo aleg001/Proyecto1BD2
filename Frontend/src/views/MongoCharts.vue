@@ -1,6 +1,6 @@
 <template>
   <AppBar />
-  <h1 class=" mt-15 text-h2 font-weight-bold text-center titleText">Estadísticas</h1>
+  <h1 class=" mt-15 text-h2 font-weight-bold text-center titleText">MongoCharts</h1>
 
   <v-container fluid class="mt-2">
     <v-col cols="15">
