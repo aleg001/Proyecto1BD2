@@ -74,7 +74,24 @@ export default {
             const res = await axios.get('http://localhost:8000/api/music')
             const new_json = JSON.stringify(res.data, null, 2)
             this.songs_list = JSON.parse(new_json)
+        },
+        async creatPlaylist() {
+            try {
+                const usuario = {
+                username: this.name + ' ' + this.lastName,
+                nombre: this.name,
+                apellido: this.lastName,
+                email: this.email,
+                password: this.password,
+                playlists: {}
+                }
+                const res = await axios.post('http://localhost:8000/api/usuarios', usuario)
+                console.log(res.data)
+            } catch (err) {
+                console.error(err)
+            }
         }
+        
     },
     beforeMount(){
         this.findSongs()
