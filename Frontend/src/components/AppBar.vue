@@ -44,6 +44,14 @@
           <v-list-item-icon>
             <v-icon>mdi-chart-areaspline</v-icon>
           </v-list-item-icon>
+          <v-list-item-title>MongoCharts</v-list-item-title>
+        </v-list-item>
+
+
+        <v-list-item to="/Stats">
+          <v-list-item-icon>
+            <v-icon>mdi-chart-areaspline</v-icon>
+          </v-list-item-icon>
           <v-list-item-title>Estadísticas de canciones</v-list-item-title>
         </v-list-item>
 
