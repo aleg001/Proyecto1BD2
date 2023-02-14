@@ -25,8 +25,17 @@
       <v-col cols="12" sm="4" class="d-flex">
         <v-card class="mx-auto button" to="/MongoCharts" @mouseover="libraryHover = true"
           @mouseleave="libraryHover = false" color="#709775" style="color: white;" rounded="xl">
+          <v-card-title class="font-weight-bold">MongoCharts <v-icon>mdi-chart-areaspline</v-icon></v-card-title>
+          <v-card-text>Estadísticas en charts. Powered by Mongo Charts!</v-card-text>
+
+        </v-card>
+      </v-col>
+
+      <v-col cols="12" sm="4" class="d-flex">
+        <v-card class="mx-auto button" to="/Stats" @mouseover="libraryHover = true" @mouseleave="libraryHover = false"
+          color="#709775" style="color: white;" rounded="xl">
           <v-card-title class="font-weight-bold">Estadísticas <v-icon>mdi-chart-areaspline</v-icon></v-card-title>
-          <v-card-text>Accede a las estadísticas de la plataforma. Powered by Mongo Charts!</v-card-text>
+          <v-card-text>Accede a las estadísticas de la plataforma.!</v-card-text>
 
         </v-card>
       </v-col>
