@@ -32,6 +32,7 @@
 <script>
 import { onMounted } from "vue";
 import useUsuarios from "../composables/usuariosApi";
+import userId from '../userId.js'
 
 export default {
   setup() {
@@ -72,6 +73,7 @@ export default {
           emailMatch = true
           if (user.password === this.password) {
             passwordMatch = true
+            userId.userId = user._id
           }
 
         }

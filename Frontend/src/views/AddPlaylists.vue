@@ -59,29 +59,38 @@
 
 import AppBar from '@/components/AppBar.vue';
 import axios from 'axios'
+import userId from '@/userId';
 
 export default {
+    
     data () {
-
+        
       return {
         autoUpdate: true,
         playlist_songs: [],
         songs_list: [],
+        Id: userId.userId,
+        createdDate: new Date().toLocaleDateString('es-ES')
       }
     },
     methods: {
+        
         async findSongs() {
             const res = await axios.get('http://localhost:8000/api/music')
             const new_json = JSON.stringify(res.data, null, 2)
             this.songs_list = JSON.parse(new_json)
+            console.log(this.Id)
+            console.log(this.createdDate)
         },
         async createPlaylist() {
             try {
                 console.log(this.playlist_songs)
                 const playlist = {
+                    user_id: this.Id,
                     title: this.title,
                     description: this.description,
-                    playlist_songs: this.playlist_songs
+                    playlist_songs: this.playlist_songs,
+                    createdDate: this.createdDate
                 }
                 const res = await axios.post('http://localhost:8000/api/playlist', playlist)
                 console.log(res)

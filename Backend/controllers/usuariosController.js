@@ -1,4 +1,5 @@
 import UsuarioModel from '../models/Usuarios.js'
+import PlaylistModel from '../models/Playlist.js'
 
 class UsuarioController {
   static getAllDocc = async (req, res) => {
@@ -59,6 +60,9 @@ class UsuarioController {
     const { email } = req.body
     try {
       const usuario = await UsuarioModel.findOneAndDelete({ email })
+      const usuarioId = usuario._id;
+
+      await PlaylistModel.deleteMany({ user_id:usuarioId })
       res.status(200).send({
         message: 'Usuario eliminado con éxito',
         usuario,

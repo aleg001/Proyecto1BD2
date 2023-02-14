@@ -22,11 +22,13 @@ class PlaylistController {
 
   static create = async (req, res) => {
     try {
-      const { title, description, playlist_songs} = req.body
+      const {user_id, title, description, playlist_songs,createdDate} = req.body
       const playlist = new PlaylistModel({
+        user_id,
         title,
         description,
         playlist_songs,
+        createdDate,
       })
       await playlist.save()
       res.status(201).send({ message: 'playlist creado con éxito' })
