@@ -15,20 +15,16 @@
     </v-container>
 
     <v-container>
-    
-        <h3 v-if="res"> 
-          <v-col class="ml-15">
-            <v-row class="align-center justify-content-center ">
-  <v-card v-for="song in JSON.parse(res)" :key="song._id" variant="tonal" height="100" width="300" class="bg-primary mr-5 mt-5 ml-5 ">
-    <p class="text-center mt-10 justify-content-center">{{ song.title }} - {{ song.artist }}</p>
-  </v-card>
-</v-row>
-
-
-          </v-col> 
-         
-        </h3>
- 
+      <h3 v-if="res">
+        <v-col class="ml-15">
+          <v-row class="align-center justify-content-center ">
+            <v-card v-for="song in JSON.parse(res)" :key="song._id" variant="tonal" height="100" width="300"
+              class="bg-primary mr-5 mt-5 ml-5 ">
+              <p class="text-center mt-10 justify-content-center">{{ song.title }} - {{ song.artist }}</p>
+            </v-card>
+          </v-row>
+        </v-col>
+      </h3>
     </v-container>
 
 </template>

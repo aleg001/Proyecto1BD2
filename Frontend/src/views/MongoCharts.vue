@@ -34,19 +34,8 @@
 
 <script>
 import AppBar from '@/components/AppBar.vue';
-import axios from 'axios'
 
 export default {
-  methods: {
-    async findSongs() {
-      const res = await axios.get('http://localhost:8000/api/musicstatistics')
-      const new_json = JSON.stringify(res.data, null, 2)
-      this.songs_list = JSON.parse(new_json)
-    }
-  },
-  beforeMount() {
-    this.findSongs()
-  },
   components: {
     AppBar,
   },
