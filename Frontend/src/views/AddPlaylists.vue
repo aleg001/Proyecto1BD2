@@ -8,14 +8,14 @@
 
 
 
-            <v-form @submit.prevent="createUsuario">
+            <v-form @submit.prevent="createPlaylist">
                 <v-row></v-row>
 
                 <div class="text-subtitle-1 text-medium-emphasis">Título</div>
-                <v-text-field label="Agrega un título" :rules="rules" hide-details="auto"></v-text-field>
+                <v-text-field v-model="title" label="Agrega un título" :rules="rules" hide-details="auto"></v-text-field>
 
                 <div class=" mt-5 text-subtitle-1 text-medium-emphasis">Descripción</div>
-                <v-text-field label="Agrega una descripción" :rules="rules" hide-details="auto"></v-text-field>
+                <v-text-field v-model="description" label="Agrega una descripción" :rules="rules" hide-details="auto"></v-text-field>
 
                 <div class=" mt-5 text-subtitle-1 text-medium-emphasis">Canciones</div>
 
@@ -75,18 +75,16 @@ export default {
             const new_json = JSON.stringify(res.data, null, 2)
             this.songs_list = JSON.parse(new_json)
         },
-        async creatPlaylist() {
+        async createPlaylist() {
             try {
-                const usuario = {
-                username: this.name + ' ' + this.lastName,
-                nombre: this.name,
-                apellido: this.lastName,
-                email: this.email,
-                password: this.password,
-                playlists: {}
+                console.log(this.playlist_songs)
+                const playlist = {
+                    title: this.title,
+                    description: this.description,
+                    playlist_songs: this.playlist_songs
                 }
-                const res = await axios.post('http://localhost:8000/api/usuarios', usuario)
-                console.log(res.data)
+                const res = await axios.post('http://localhost:8000/api/playlist', playlist)
+                console.log(res)
             } catch (err) {
                 console.error(err)
             }

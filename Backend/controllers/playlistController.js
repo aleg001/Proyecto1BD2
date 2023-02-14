@@ -13,7 +13,7 @@ class PlaylistController {
   static find = async (req, res) => {
     const query = req.body
     try {
-      const docs = await PlaylistModel.find(query).limit(10)
+      const docs = await PlaylistModel.find(query)
       res.json(docs)
     } catch (err) {
       res.status(500).json({ message: err.message })
@@ -22,11 +22,11 @@ class PlaylistController {
 
   static create = async (req, res) => {
     try {
-      const { title, descripcion, canciones} = req.body
+      const { title, description, playlist_songs} = req.body
       const playlist = new PlaylistModel({
         title,
-        descripcion,
-        canciones,
+        description,
+        playlist_songs,
       })
       await playlist.save()
       res.status(201).send({ message: 'playlist creado con éxito' })
