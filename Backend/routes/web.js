@@ -15,5 +15,6 @@ router.post('/usuarioseliminados', UsuarioEliminadoController.create)
 router.post('/music', MusicController.find)
 router.get('/music', MusicController.getAllDoc)
 router.post('/playlist',PlaylistController.create)
+router.get('/musicstatistics', MusicController.findStatistics1)
 
 export default router
