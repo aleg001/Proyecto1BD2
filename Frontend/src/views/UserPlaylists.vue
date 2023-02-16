@@ -41,32 +41,41 @@
 
 <script>
 import AppBar from '@/components/AppBar.vue';
+import axios from 'axios'
+import userId from '@/userId';
 
 export default {
     components: {
         AppBar,
     },
-    data: () => ({
-
-        playlists: [
-            {
-                name: 'My Playlist 1',
-                author: 'John Doe',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius turpis nec mauris hendrerit, vel tristique ligula ultricies.'
-            },
-            {
-                name: 'My Playlist 2',
-                author: 'Jane Doe',
-                description: 'Praesent sit amet mi a libero faucibus bibendum id id lectus. Nulla facilisi. Nulla eget sollicitudin erat.'
-            },
-            {
-                name: 'My Playlist 3',
-                author: 'Joe Smith',
-                description: 'Etiam imperdiet mi eget sapien fringilla, ut interdum magna rhoncus. Morbi malesuada lectus non neque ornare, non ullamcorper tellus bibendum.'
+    data () {
+        
+        return {
+          autoUpdate: true,
+          playlist: [],
+          
+        }
+    },
+    methods: {
+        
+        async findPlaylists() {
+            console.log(userId)
+            const query = {
+                $match: {
+                    'user_id': userId
+                }
             }
-        ]
-    }
-    ),
+            const res = await axios.get('http://localhost:8000/api/userplaylists', query)
+            const new_json = JSON.stringify(res.data, null, 2)
+            const playlist_json = JSON.parse(new_json)
+            this.playlist = playlist_json.Array
+            console.log(this.playlist)
+        },
+        
+    },
+    beforeMount(){
+        this.findPlaylists()
+    },
 
 };
 </script>

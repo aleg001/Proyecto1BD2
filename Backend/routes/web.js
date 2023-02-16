@@ -3,6 +3,7 @@ import UsuarioController from '../controllers/usuariosController.js'
 import MusicController from '../controllers/musicController.js'
 import UsuarioEliminadoController from '../controllers/usuarioseliminadosController.js'
 import PlaylistController from '../controllers/playlistController.js'
+import PlaylistModel from '../models/Playlist.js'
 
 const router = express.Router()
 
@@ -17,5 +18,6 @@ router.get('/music', MusicController.getAllDoc)
 router.post('/playlist',PlaylistController.create)
 router.get('/musicstatistic1', MusicController.findStatistics1)
 router.get('/musicstatistic2', MusicController.findStatistics2)
+router.get('/userplaylists', PlaylistController.find)
 
 export default router

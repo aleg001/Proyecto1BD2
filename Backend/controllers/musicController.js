@@ -56,7 +56,6 @@ class MusicController {
       res.status(500).json({ message: err.message })
     }
   }
-
 }
 
 export default MusicController
