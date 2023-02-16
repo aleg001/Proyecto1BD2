@@ -33,6 +33,13 @@
           </v-list-item-icon>
           <v-list-item-title>Crear Playlist</v-list-item-title>
         </v-list-item>
+
+        <v-list-item to="/UserPlaylists">
+          <v-list-item-icon>
+            <v-icon>mdi-playlist-check</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>Ver Playlists</v-list-item-title>
+        </v-list-item>
         <v-list-item to="/SearchSongs">
           <v-list-item-icon>
             <v-icon>mdi-music</v-icon>
@@ -46,6 +53,7 @@
           </v-list-item-icon>
           <v-list-item-title>MongoCharts</v-list-item-title>
         </v-list-item>
+
 
 
         <v-list-item to="/Stats">
@@ -63,8 +71,7 @@
         </v-list-item>
       </v-list-item-group>
     </v-list>
-  </v-navigation-drawer>
-
+</v-navigation-drawer>
 </template>
 
 
