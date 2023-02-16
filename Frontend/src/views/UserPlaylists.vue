@@ -68,7 +68,7 @@ export default {
             const res = await axios.get('http://localhost:8000/api/userplaylists', query)
             const new_json = JSON.stringify(res.data, null, 2)
             this.playlist = JSON.parse(new_json)
-
+            console.log(this.playlist)
         },
         
     },
